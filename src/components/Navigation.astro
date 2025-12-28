@@ -1,0 +1,167 @@
+---
+---
+
+<nav aria-expanded="false">
+    <button title="Open Navigation"></button>
+    <ul inert>
+        <li>
+            <a href="/index.html">Home</a>
+        </li>
+        <li>
+            <a href="/lebenslauf">Lebenslauf</a>
+        </li>
+        <li>
+            <a href="/werke">Werke</a>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <a href="/werke/fotographie/">Fotographie</a>
+                </li>
+                <li>
+                    <a href="/werke/zeichnung/">Zeichnung</a>
+                </li>
+                <li>
+                    <a href="/werke/skulpturen/">Skulpturen</a>
+                </li>
+                <li>
+                    <a href="/werke/herbarium/">Herbar</a>
+                </li>
+                <li>
+                    <a href="/werke/konzepte/">Konzepte</a>
+                </li>
+                <li>
+                    <a href="/werke/performance/">Performance</a>
+                </li>
+                <li>
+                    <a href="/werke/kollaboration/">Kolabs</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="events">Events</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    const navElement = document.getElementsByTagName("nav")[0];
+    const navButton = navElement.children[0];
+    const navList = navElement.children[1];
+
+    navButton.addEventListener("click", () => {
+        if (navElement.getAttribute("aria-expanded") == "false") {
+            navElement.setAttribute("aria-expanded", "true");
+            navList.removeAttribute("inert");
+        } else {
+            navElement.setAttribute("aria-expanded", "false");
+            navList.setAttribute("inert", "");
+        }
+    })
+</script>
+
+<style>
+    * {
+        padding: 0;
+    }
+
+    nav {
+        display: inline-block;
+        position: fixed;
+        width: 200px;
+        height: 100dvh;
+        background-color: #eee;
+        transform: translate(0, 0);
+        transition: transform 0.2s;
+        user-select: none;
+        z-index: 900;
+    }
+
+    nav > ul {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    nav[aria-expanded="false"] {
+        transform: translate(-100%, 0);
+    }
+
+    nav > button {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 0;
+        width: 48px;
+        height: 48px;
+        transform: translate(100%, 20px);
+        border-radius: 0 50% 50% 0;
+        border: none;
+        background-color: #eee;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-left: 2px solid #000;
+            border-top: 2px solid #000;
+            transform: rotate(135deg);
+            transition: transform 0.2s;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: #aaa;
+            }
+        }
+
+        &:focus-visible {
+            background-color: #aaa;
+        }
+    }
+
+    nav[aria-expanded="true"] > button {
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    nav * {
+        list-style-type: none;
+        text-decoration: none;
+    }
+
+    nav a {
+        display: block;
+        border-left: 4px solid #0000;
+        padding: 8px 0 8px 8px;
+        transition: background-color 0.2s;
+        outline: none;
+
+        &:hover {
+            background-color: #aaa;
+        }
+
+        &:focus-visible {
+            background-color: #aaa;
+        }
+    }
+
+    nav ul ul a {
+        padding-left: 20px;
+    }
+
+    @media (hover: hover) {
+        button:hover {
+            cursor: pointer;
+        }
+
+        summary:hover {
+            cursor: pointer;
+        }
+    }
+</style>

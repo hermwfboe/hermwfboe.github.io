@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+import TopicGrid from '../../../layouts/TopicGrid.astro';
+
+const entries = (await getCollection('fotographie')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<TopicGrid title="Fotographie" description="Sammlung an Werken von Jemandem">
+    {
+        entries.map(entry => (
+            <a href={`./${entry.id}`}>
+                <Image src={entry.data.thumbnail} alt={entry.data.title} />
+                <span>{entry.data.title}</span>
+            </a>
+        ))
+    }
+</TopicGrid>
