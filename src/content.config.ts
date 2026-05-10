@@ -66,9 +66,9 @@ const performance = defineCollection({
         }),
 });
 
-const skulpturen = defineCollection({
+const plastik = defineCollection({
     // Load Markdown and MDX files in the `src/content/blog/` directory.
-    loader: glob({ base: './src/content/werke/skulpturen', pattern: '**/*.{md,mdx}' }),
+    loader: glob({ base: './src/content/werke/plastik', pattern: '**/*.{md,mdx}' }),
     // Type-check frontmatter using a schema
     schema: ({ image }) =>
         z.object({
@@ -98,6 +98,6 @@ export const collections = {
     kollaboration,
     konzepte,
     performance,
-    skulpturen,
+    plastik,
     zeichnung
 };

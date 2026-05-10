@@ -4,12 +4,12 @@ import { getCollection } from 'astro:content';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
 import TopicGrid from '../../../layouts/TopicGrid.astro';
 
-const entries = (await getCollection('skulpturen')).sort(
+const entries = (await getCollection('plastik')).sort(
 	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
-<TopicGrid title="Skulpturen" description="Sammlung an Werken von Jemandem">
+<TopicGrid title="Plastik" description="Sammlung an Werken von Jemandem">
     {
         entries.map(entry => (
             <a href={`./${entry.id}`}>
