@@ -4,11 +4,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../../../consts";
 import GalleryGrid from "../../../layouts/GalleryGrid.astro";
 import GalleryCell from "../../../layouts/GalleryCell.astro";
 
+import image from "../../../assets/fotographie.jpg";
+
 const entries = (await getCollection("fotographie")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
-<GalleryGrid title="Fotographie" description="Sammlung an Werken von Jemandem">
+<GalleryGrid
+    title="Fotographie"
+    description="Sammlung an Werken von Jemandem"
+    image={image.src}
+>
     {entries.map((entry) => <GalleryCell entry={entry} />)}
 </GalleryGrid>

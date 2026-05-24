@@ -4,7 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
-const images = Object.values((import.meta.glob("../assets/diashow/*.{jpg,jpeg,png}")));
+const images = Object.values((import.meta.glob<{ default: ImageMetadata }>("../assets/diashow/*.{jpg,jpeg,png}")));
 const firstImage = images[0];
 const otherImages = images.slice(1);
 ---
@@ -12,7 +12,7 @@ const otherImages = images.slice(1);
 <!doctype html>
 <html lang="de">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image={(await firstImage()).default.src}/>
         <style>
             main, ul {
                 display: flex;

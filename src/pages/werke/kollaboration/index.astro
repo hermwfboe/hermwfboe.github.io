@@ -1,14 +1,20 @@
 ---
-import { getCollection } from 'astro:content';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
-import TopicGrid from '../../../layouts/TopicGrid.astro';
-import TopicCell from '../../../layouts/TopicCell.astro';
+import { getCollection } from "astro:content";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../../consts";
+import TopicGrid from "../../../layouts/TopicGrid.astro";
+import TopicCell from "../../../layouts/TopicCell.astro";
 
-const entries = (await getCollection('kollaboration')).sort(
-	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+import image from "../../../assets/kollaboration.jpg";
+
+const entries = (await getCollection("kollaboration")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
-<TopicGrid title="Kollaboration" description="Sammlung an Werken von Jemandem">
+<TopicGrid
+    title="Kollaboration"
+    description="Sammlung an Werken von Jemandem"
+    image={image.src}
+>
     {entries.map((entry) => <TopicCell entry={entry} />)}
 </TopicGrid>

@@ -4,11 +4,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../../../consts";
 import TopicGrid from "../../../layouts/TopicGrid.astro";
 import TopicCell from "../../../layouts/TopicCell.astro";
 
+import image from "../../../assets/konzepte.jpg";
+
 const entries = (await getCollection("konzepte")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
-<TopicGrid title="Konzepte" description="Sammlung an Werken von Jemandem">
+<TopicGrid
+    title="Konzepte"
+    description="Sammlung an Werken von Jemandem"
+    image={image.src}
+>
     {entries.map((entry) => <TopicCell entry={entry} />)}
 </TopicGrid>
