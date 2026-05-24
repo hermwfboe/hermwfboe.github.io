@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../../../consts";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_BASE_URL } from "../../../consts";
 import TopicGrid from "../../../layouts/TopicGrid.astro";
 import TopicCell from "../../../layouts/TopicCell.astro";
 
@@ -14,7 +14,7 @@ const entries = (await getCollection("kollaboration")).sort(
 <TopicGrid
     title="Kollaboration"
     description="Sammlung an Werken von Jemandem"
-    image={image.src}
+    image={SITE_BASE_URL + image.src}
 >
     {entries.map((entry) => <TopicCell entry={entry} />)}
 </TopicGrid>

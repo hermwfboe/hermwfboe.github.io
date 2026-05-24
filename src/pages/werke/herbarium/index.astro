@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../../../consts";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_BASE_URL } from "../../../consts";
 import GalleryGrid from "../../../layouts/GalleryGrid.astro";
 import GalleryCell from "../../../layouts/GalleryCell.astro";
 
@@ -14,7 +14,7 @@ const entries = (await getCollection("herbarium")).sort(
 <GalleryGrid
     title="Herbarium"
     description="Sammlung an Werken von Jemandem"
-    image={image.src}
+    image={SITE_BASE_URL + image.src}
 >
     {entries.map((entry) => <GalleryCell entry={entry} />)}
 </GalleryGrid>
