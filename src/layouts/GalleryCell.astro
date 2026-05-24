@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    entry: {
+        id: string;
+        data: {
+            date: Date;
+            title: string;
+            description: string;
+            thumbnail: {
+                src: string;
+                width: number;
+                height: number;
+                format:
+                    | "png"
+                    | "jpg"
+                    | "jpeg"
+                    | "tiff"
+                    | "webp"
+                    | "gif"
+                    | "svg"
+                    | "avif";
+            };
+        };
+    };
+}
+const { entry } = Astro.props;
+---
+
+<span>
+    <Image src={entry.data.thumbnail} alt={entry.data.title} />
+    <span>{entry.data.title}</span>
+</span>

@@ -1,28 +1,32 @@
 ---
-import { Image } from 'astro:assets';
-import TopicGrid from "../../layouts/TopicGrid.astro"
+import { Image } from "astro:assets";
+import TopicGrid from "../../layouts/TopicGrid.astro";
 
-import fotographie from "../../assets/fotographie.jpg"
-import herbarium from "../../assets/herbarium.jpg"
-import kollaboration from "../../assets/kollaboration.jpg"
-import konzepte from "../../assets/konzepte.jpg"
-import performance from "../../assets/performance.jpg"
-import plastik from "../../assets/plastik.jpg"
-import zeichnung from "../../assets/zeichnung.jpg"
+import fotographie from "../../assets/fotographie.jpg";
+import herbarium from "../../assets/herbarium.jpg";
+import kollaboration from "../../assets/kollaboration.jpg";
+import konzepte from "../../assets/konzepte.jpg";
+import performance from "../../assets/performance.jpg";
+import plastik from "../../assets/plastik.jpg";
+import zeichnung from "../../assets/zeichnung.jpg";
 ---
 
-<TopicGrid>
+<TopicGrid title="Werke" description="Sammlung an Werken von Jemandem">
     <a href="./werke/fotographie/">
         <Image src={fotographie} alt="" />
         <span>Fotographie</span>
     </a>
+    <a href="./werke/zeichnung/">
+        <Image src={zeichnung} alt="" />
+        <span>Zeichnung</span>
+    </a>
+    <a href="./werke/plastik/">
+        <Image src={plastik} alt="" />
+        <span>Plastik</span>
+    </a>
     <a href="./werke/herbarium/">
         <Image src={herbarium} alt="" />
         <span>Herbarium</span>
-    </a>
-    <a href="./werke/kollaboration/">
-        <Image src={kollaboration} alt="" />
-        <span>Kollaboration</span>
     </a>
     <a href="./werke/konzepte/">
         <Image src={konzepte} alt="" />
@@ -32,12 +36,8 @@ import zeichnung from "../../assets/zeichnung.jpg"
         <Image src={performance} alt="" />
         <span>Performance</span>
     </a>
-    <a href="./werke/plastik/">
-        <Image src={plastik} alt="" />
-        <span>Plastik</span>
-    </a>
-    <a href="./werke/zeichnung/">
-        <Image src={zeichnung} alt="" />
-        <span>Zeichnung</span>
+    <a href="./werke/kollaboration/">
+        <Image src={kollaboration} alt="" />
+        <span>Kollaboration</span>
     </a>
 </TopicGrid>

@@ -31,7 +31,7 @@ const { title, description } = Astro.props;
                 min-height: 100%;
             }
 
-            main > :global(a) {
+            main > :global(span) {
                 position: relative;
                 /*
                 NOTE: theoretically works, but looks kinda awful ...
@@ -70,7 +70,7 @@ const { title, description } = Astro.props;
                 }
             }
 
-            main > :global(a) > :global(img) {
+            main > :global(span) > :global(img) {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
