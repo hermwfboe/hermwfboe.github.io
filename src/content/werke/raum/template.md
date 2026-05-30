@@ -1,7 +1,7 @@
 ---
 title: 'First post'
 description: 'Ein Werk erstellt von Jemandem.'
-thumbnail: '../../../assets/herbarium/1.jpg'
+thumbnail: '../../../assets/raum/1.jpg'
 date: '2026-01-01'
 ---
 

@@ -4,15 +4,15 @@ import { SITE_DESCRIPTION, SITE_TITLE, SITE_BASE_URL } from "../../../consts";
 import GalleryGrid from "../../../layouts/GalleryGrid.astro";
 import GalleryCell from "../../../layouts/GalleryCell.astro";
 
-import image from "../../../assets/plastik.jpg";
+import image from "../../../assets/raum.jpg";
 
-const entries = (await getCollection("plastik")).sort(
+const entries = (await getCollection("raum")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
 <GalleryGrid
-    title="Plastik"
+    title="Raum"
     description="Sammlung an Werken von Jemandem"
     image={SITE_BASE_URL + image.src}
 >

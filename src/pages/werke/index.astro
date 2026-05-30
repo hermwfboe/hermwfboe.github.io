@@ -2,31 +2,26 @@
 import { Image } from "astro:assets";
 import TopicGrid from "../../layouts/TopicGrid.astro";
 
-import fotographie from "../../assets/fotographie.jpg";
-import herbarium from "../../assets/herbarium.jpg";
+import zeit from "../../assets/zeit.jpg";
 import kollaboration from "../../assets/kollaboration.jpg";
 import konzepte from "../../assets/konzepte.jpg";
 import performance from "../../assets/performance.jpg";
-import plastik from "../../assets/plastik.jpg";
-import zeichnung from "../../assets/zeichnung.jpg";
+import raum from "../../assets/raum.jpg";
+import flaeche from "../../assets/flaeche.jpg";
 ---
 
 <TopicGrid title="Werke" description="Sammlung an Werken von Jemandem">
-    <a href="./fotographie/">
-        <Image src={fotographie} alt="" />
-        <span>Fotographie</span>
+    <a href="./zeit/">
+        <Image src={zeit} alt="" />
+        <span>Zeit</span>
     </a>
-    <a href="./zeichnung/">
-        <Image src={zeichnung} alt="" />
-        <span>Zeichnung</span>
+    <a href="./flaeche/">
+        <Image src={flaeche} alt="" />
+        <span>Fläche</span>
     </a>
-    <a href="./plastik/">
-        <Image src={plastik} alt="" />
-        <span>Plastik</span>
-    </a>
-    <a href="./herbarium/">
-        <Image src={herbarium} alt="" />
-        <span>Herbarium</span>
+    <a href="./raum/">
+        <Image src={raum} alt="" />
+        <span>Raum</span>
     </a>
     <a href="./konzepte/">
         <Image src={konzepte} alt="" />

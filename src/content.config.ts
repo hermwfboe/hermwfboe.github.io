@@ -1,22 +1,9 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-const fotographie = defineCollection({
+const zeit = defineCollection({
     // Load Markdown and MDX files in the `src/content/blog/` directory.
-    loader: glob({ base: './src/content/werke/fotographie', pattern: '**/*.{md,mdx}' }),
-    // Type-check frontmatter using a schema
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            description: z.string(),
-            date: z.coerce.date(),
-            thumbnail: image(),
-        }),
-});
-
-const herbarium = defineCollection({
-    // Load Markdown and MDX files in the `src/content/blog/` directory.
-    loader: glob({ base: './src/content/werke/herbarium', pattern: '**/*.{md,mdx}' }),
+    loader: glob({ base: './src/content/werke/zeit', pattern: '**/*.{md,mdx}' }),
     // Type-check frontmatter using a schema
     schema: ({ image }) =>
         z.object({
@@ -66,9 +53,9 @@ const performance = defineCollection({
         }),
 });
 
-const plastik = defineCollection({
+const raum = defineCollection({
     // Load Markdown and MDX files in the `src/content/blog/` directory.
-    loader: glob({ base: './src/content/werke/plastik', pattern: '**/*.{md,mdx}' }),
+    loader: glob({ base: './src/content/werke/raum', pattern: '**/*.{md,mdx}' }),
     // Type-check frontmatter using a schema
     schema: ({ image }) =>
         z.object({
@@ -79,9 +66,9 @@ const plastik = defineCollection({
         }),
 });
 
-const zeichnung = defineCollection({
+const flaeche = defineCollection({
     // Load Markdown and MDX files in the `src/content/blog/` directory.
-    loader: glob({ base: './src/content/werke/zeichnung', pattern: '**/*.{md,mdx}' }),
+    loader: glob({ base: './src/content/werke/flaeche', pattern: '**/*.{md,mdx}' }),
     // Type-check frontmatter using a schema
     schema: ({ image }) =>
         z.object({
@@ -93,11 +80,10 @@ const zeichnung = defineCollection({
 });
 
 export const collections = {
-    fotographie,
-    herbarium,
+    zeit,
     kollaboration,
     konzepte,
     performance,
-    plastik,
-    zeichnung
+    raum,
+    flaeche
 };
