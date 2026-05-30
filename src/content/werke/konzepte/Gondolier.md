@@ -7,7 +7,7 @@ date: '2022'
 
 # Gondolier
 
-![](/public/images/IMG_0402.jpeg)
+![](/images/IMG_0402.jpeg)
 
 Bla Bla Bla
 
@@ -19,4 +19,4 @@ Bla Bla Bla
 | --- | --- |
 | 123 | 123 |
 
-[abc](/public/images/IMG_0402.jpeg)
+[abc](/images/IMG_0402.jpeg)
